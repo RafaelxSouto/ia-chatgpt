@@ -1,15 +1,51 @@
 # Código que cria um chatbot simples em Python
 
-import tkinter as tk #Biblioteca que constroi interface gráfica
-import random #Biblioteca de aleatóriedade.
+import tkinter as tk  # Biblioteca que constroi interface gráfica
+import random  # Biblioteca de aleatóriedade.
 
 # Respostas simples
 
 respostas = {
-    "oi": [
-        "Olá!", "Oi! Tudo Bem?", "E aí!"
-    ],
+    "oi": ["Olá!", "Oi! Tudo Bem?", "E aí!"],
     "Tudo bem": ["Tudo ótimo!", "Sim, e vocẽ", "Indo bem"],
     "python": ["Python é ótimo para IA!", "Você está estudando Python?"],
-    "ia": ["IA é fascinante!", "Inteligencia Artificial está em todo lugar!"]
+    "ia": ["IA é fascinante!", "Inteligencia Artificial está em todo lugar!"],
 }
+
+
+def responder(msg):
+    msg = msg.lower()
+    for chave in respostas:
+        if chave in msg:
+            return random.choice(respostas[chave])
+    return "Não entendi, pode reformular?"
+
+
+def enviar():
+    msg = entrada.get()
+
+    if msg.strip() == "":
+        return
+
+    chat.insert(tk.END, "Voçê: " + msg + "\n")
+
+    resposta = responder(msg)
+    chat.insert(tk.END, "Bot: " + resposta + "\n\n")
+
+    entrada.delete(0, tk.END)
+
+
+# Interface
+janela = tk.Tk()
+janela.title("Chatbot IA - Simples")
+
+chat = tk.Text(janela, height=50, width=90)
+chat.pack()
+
+entrada = tk.Entry(janela, width=40)
+entrada.pack(side=tk.LEFT, padx=5, pady=5)
+
+botao = tk.Button(janela, text='Enviar', command=enviar)
+botao.pack(side=tk.LEFT)
+
+janela.mainloop()
