@@ -7,7 +7,7 @@ import random  # Biblioteca de aleatóriedade.
 
 respostas = {
     "oi": ["Olá!", "Oi! Tudo Bem?", "E aí!"],
-    "Tudo bem": ["Tudo ótimo!", "Sim, e vocẽ", "Indo bem"],
+    "tudo bem": ["Tudo ótimo!", "Sim, e vocẽ", "Indo bem"],
     "python": ["Python é ótimo para IA!", "Você está estudando Python?"],
     "ia": ["IA é fascinante!", "Inteligencia Artificial está em todo lugar!"],
 }
@@ -47,9 +47,9 @@ entrada.pack(side=tk.LEFT, padx=5, pady=5)
 
 botao = tk.Button(janela, text="Enviar", command=enviar)
 botao.pack(side=tk.LEFT)
-chat.configure(font=("Arial", 22))
-entrada.configure(font=("Arial", 22))
-botao.configure(font=("Arial", 22))
+chat.configure(font=("Arial", 44))
+entrada.configure(font=("Arial", 44))
+botao.configure(font=("Arial", 44))
 
 # Tema escuro com texto verde
 janela.configure(bg="#121212")
