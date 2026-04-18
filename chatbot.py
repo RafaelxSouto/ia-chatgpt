@@ -45,7 +45,25 @@ chat.pack()
 entrada = tk.Entry(janela, width=40)
 entrada.pack(side=tk.LEFT, padx=5, pady=5)
 
-botao = tk.Button(janela, text='Enviar', command=enviar)
+botao = tk.Button(janela, text="Enviar", command=enviar)
 botao.pack(side=tk.LEFT)
+chat.configure(font=("Arial", 22))
+entrada.configure(font=("Arial", 22))
+botao.configure(font=("Arial", 22))
+
+# Tema escuro com texto verde
+janela.configure(bg="#121212")
+
+chat.configure(bg="#0d0d0d", fg="#00ff66", insertbackground="#00ff66")
+
+entrada.configure(bg="#1a1a1a", fg="#00ff66", insertbackground="#00ff66")
+
+botao.configure(
+    bg="#262626",
+    fg="#00ff66",
+    activebackground="#333333",
+    activeforeground="#00ff66",
+    relief=tk.FLAT,
+)
 
 janela.mainloop()
